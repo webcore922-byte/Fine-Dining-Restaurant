@@ -1,0 +1,84 @@
+/* ===== COLOR PALETTE ===== */
+:root {
+  --primary:   #C8973A;   /* burnished gold */
+  --secondary: #8B1A1A;   /* deep burgundy */
+  --accent:    #E8C87A;   /* light gold */
+  --dark:      #0D0D0D;   /* near black */
+  --surface:   #141414;   /* card bg */
+  --muted:     #6A6A6A;
+  --light:     #F5EDD8;   /* cream */
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Jost',sans-serif; background:var(--dark); color:#E0D5C1; overflow-x:hidden; }
+
+/* ---------- NAVBAR ---------- */
+nav.site-nav { position:fixed; top:0; width:100%; z-index:999; padding:1.5rem 0; transition:.4s; border-bottom: 1px solid transparent; }
+nav.site-nav.scrolled { background:rgba(13,13,13,.98); backdrop-filter:blur(10px); padding:0.8rem 0; border-bottom:1px solid rgba(200,151,58,.2); }
+.nav-brand { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--primary) !important; font-style:italic; letter-spacing:2px; }
+.nav-link-custom { color:rgba(224,213,193,.7) !important; font-size:.85rem; letter-spacing:2px; text-transform:uppercase; margin:0 1rem; text-decoration:none; transition:.3s; }
+.nav-link-custom:hover { color:var(--primary) !important; }
+
+/* Hamburger Menu Icon */
+.custom-toggler.navbar-toggler { border: 1px solid var(--primary); border-radius: 0; padding: 5px; }
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23C8973A' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+/* Navbar Responsive Mobile */
+@media (max-width: 991px) {
+    .navbar-collapse { background: var(--surface); padding: 2rem; margin-top: 1rem; border: 1px solid rgba(200,151,58,0.1); }
+    .nav-link-custom { display: block; margin: 1.5rem 0 !important; }
+}
+
+.btn-reserve { border:1px solid var(--primary); color:var(--primary); background:transparent; padding:.5rem 1.6rem; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; transition:.3s; }
+.btn-reserve:hover { background:var(--primary); color:var(--dark); }
+
+/* ---------- HERO ---------- */
+.hero { min-height:100vh; background:#0a0a0a; display:flex; align-items:center; justify-content:center; position:relative; text-align:center; overflow:hidden; }
+.hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(200,151,58,.12) 0%, transparent 70%); }
+.hero-line { width:1px; height:80px; background:var(--primary); margin:0 auto 2rem; opacity:.6; }
+.hero-tag { font-size:.75rem; letter-spacing:4px; text-transform:uppercase; color:var(--primary); margin-bottom:1.5rem; }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,8vw,7rem); line-height:1.1; color:#F5EDD8; }
+.hero-title em { color:var(--primary); font-style:italic; }
+.hero-sub { font-size:1rem; color:rgba(224,213,193,.55); max-width:500px; margin:1.5rem auto 2.5rem; line-height:1.8; }
+.btn-discover { background:var(--primary); color:var(--dark); padding:.9rem 2.5rem; font-size:.8rem; letter-spacing:2px; text-transform:uppercase; font-weight:600; transition:.3s; display: inline-block; }
+.scroll-hint { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); color:rgba(200,151,58,.5); font-size:.7rem; letter-spacing:3px; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+
+/* ---------- ABOUT & GENERAL SECTIONS ---------- */
+.about-section, .menu-section, .reserve-section { padding:clamp(4rem, 10vw, 7rem) 0; }
+.label, .section-label { font-size:.75rem; letter-spacing:4px; text-transform:uppercase; color:var(--primary); margin-bottom:1rem; display:block; }
+h2, .section-heading { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem, 5vw, 3.5rem); color:var(--light); margin-bottom:1.5rem; }
+.about-img-box { background:linear-gradient(135deg,rgba(200,151,58,.1),rgba(139,26,26,.1)); border:1px solid rgba(200,151,58,.2); height:350px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+.chef-stat .num { font-family:'Cormorant Garamond',serif; font-size:2.2rem; color:var(--primary); }
+.chef-stat .lbl { font-size:.7rem; letter-spacing:1px; text-transform:uppercase; color:var(--muted); }
+
+/* ---------- MENU ---------- */
+.gold-divider { display:flex; align-items:center; gap:1rem; margin:0 auto 3rem; max-width:250px; }
+.gold-divider::before, .gold-divider::after { content:''; flex:1; height:1px; background:var(--primary); opacity:.3; }
+.menu-tabs { display:flex; justify-content:center; gap:1.5rem; margin-bottom:3rem; flex-wrap:wrap; }
+.menu-tab { background:none; border:none; color:rgba(224,213,193,.5); font-size:.75rem; letter-spacing:2px; text-transform:uppercase; border-bottom:2px solid transparent; padding-bottom:5px; transition:.3s; }
+.menu-tab.active { color:var(--primary); border-bottom-color:var(--primary); }
+.menu-col { background:var(--surface); padding:1.5rem; border:1px solid rgba(200,151,58,.1); }
+.menu-item { display:flex; justify-content:space-between; padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,.05); }
+.menu-name { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--light); }
+.menu-price { color:var(--primary); font-family:'Cormorant Garamond',serif; font-size:1.2rem; }
+
+/* ---------- FORMS ---------- */
+.form-control-dark { background:rgba(255,255,255,.03); border:1px solid rgba(200,151,58,.2); color:white; border-radius:0; padding:.8rem; }
+.form-control-dark:focus { background:rgba(255,255,255,.06); border-color:var(--primary); box-shadow:none; color:white; }
+.form-control-dark::placeholder { color:rgba(255,255,255,.4); }
+.btn-reserve-main { background:var(--primary); color:var(--dark); width:100%; padding:1rem; border:none; text-transform:uppercase; font-weight:600; letter-spacing:2px; transition:.3s; }
+
+/* ---------- FOOTER ---------- */
+footer { background:#080808; padding:4rem 0 2rem; border-top:1px solid rgba(200,151,58,.1); }
+footer a { color:rgba(224,213,193,.4); text-decoration:none; display:block; margin:5px 0; font-size:.85rem; }
+.footer-col-title { color:var(--primary); font-size:.7rem; letter-spacing:2px; text-transform:uppercase; }
+
+/* ---------- MOBILE ADJUSTMENTS ---------- */
+@media (max-width: 576px) {
+    .hero-title { font-size: 2.5rem; }
+    .about-img-box { height: 250px; font-size: 3.5rem; }
+}
